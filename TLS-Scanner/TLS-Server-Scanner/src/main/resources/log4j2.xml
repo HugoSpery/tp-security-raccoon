@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Routing name="DynamicConsole">
+            <Routes pattern="${sys:debugMode:-true}">
+                <Route key="true">
+                    <Console name="DebugConsole" target="SYSTEM_OUT">
+                        <PatternLayout pattern="%highlight{%-5level: %c{1} - %msg%n%throwable}"/>
+                    </Console>
+                </Route>
+                <Route key="false">
+                    <Console name="MinimalConsole" target="SYSTEM_OUT">
+                        <PatternLayout pattern="%highlight{%msg}%n"/>
+                    </Console>
+                </Route>
+            </Routes>
+        </Routing>
+    </Appenders>
+    <Loggers>
+        <Logger name="de.rub.nds.tlsattacker" level="ERROR" additivity="false">
+            <AppenderRef ref="DynamicConsole"/>
+        </Logger>
+        <Logger name="de.rub.nds.tlsscanner" level="INFO" additivity="false">
+            <AppenderRef ref="DynamicConsole"/>
+        </Logger>
+        <Logger name="de.rub.nds.scanner" level="INFO" additivity="false">
+            <AppenderRef ref="DynamicConsole"/>
+        </Logger>
+        <Logger name="org.xbill.dns" level="WARN" additivity="false">
+            <AppenderRef ref="DynamicConsole"/>
+        </Logger>
+        <Logger name="DirectLogger" level="OFF" additivity="false">
+            <AppenderRef ref="DynamicConsole"/>
+        </Logger>
+        <Logger name="org.reflections" level="OFF" additivity="false">
+            <AppenderRef ref="DynamicConsole"/>
+        </Logger>
+        <Root level="INFO">
+            <AppenderRef ref="DynamicConsole"/>
+        </Root>
+    </Loggers>
+</Configuration>
