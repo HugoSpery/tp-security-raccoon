@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raccoon Attack Demo Server</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        .raccoon {
+            text-align: center;
+            font-size: 4em;
+            margin: 20px 0;
+        }
+        .info-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 4px solid #ff6b6b;
+        }
+        .warning {
+            background: rgba(255, 107, 107, 0.2);
+            border-left-color: #ff4757;
+        }
+        .endpoints {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .endpoint {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .endpoint a {
+            color: #70a1ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .endpoint a:hover {
+            text-decoration: underline;
+        }
+        .technical-info {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="raccoon">🦝</div>
+        <h1>Serveur Raccoon Attack Demo</h1>
+        
+        <div class="info-box warning">
+            <h3>⚠️ Serveur Intentionnellement Vulnérable</h3>
+            <p>Ce serveur est configuré pour démontrer la vulnérabilité <strong>Raccoon Attack</strong> (CVE-2020-1968). 
+            Il ne doit jamais être utilisé en production.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>🎯 Vulnérabilités Implémentées</h3>
+            <ul>
+                <li><strong>Réutilisation de clés DH statiques</strong> - Le serveur utilise les mêmes paramètres DH pour toutes les connexions</li>
+                <li><strong>TLS 1.2 uniquement</strong> - Pas de support pour TLS 1.3 qui corrige cette vulnérabilité</li>
+                <li><strong>Cipher suites DHE</strong> - Priorité donnée aux cipher suites Diffie-Hellman éphémères</li>
+                <li><strong>Session cache désactivé</strong> - Force de nouveaux handshakes pour chaque connexion</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>🔗 Endpoints Disponibles</h3>
+            <div class="endpoints">
+                <div class="endpoint">
+                    <h4>HTTP (Port 3000)</h4>
+                    <a href="/status">/status</a><br>
+                    <a href="/test">/test</a><br>
+                    <a href="/https-test">/https-test</a>
+                </div>
+                <div class="endpoint">
+                    <h4>HTTPS Vulnérable (Port 8443)</h4>
+                    <a href="https://localhost:8443/status">HTTPS /status</a><br>
+                    <a href="https://localhost:8443/test">HTTPS /test</a><br>
+                    <small>⚠️ Certificat auto-signé</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>🧪 Configuration Technique</h3>
+            <div class="technical-info">
+                <strong>Protocole:</strong> TLS 1.2<br>
+                <strong>Cipher Suites:</strong> DHE-RSA-AES256-SHA, DHE-RSA-AES128-SHA (priorité)<br>
+                <strong>Paramètres DH:</strong> 1024 bits (statiques)<br>
+                <strong>Session Management:</strong> Cache désactivé, pas de tickets<br>
+                <strong>Forward Secrecy:</strong> Compromis par la réutilisation des clés
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>🛠️ Tests Raccoon</h3>
+            <p>Pour tester la vulnérabilité Raccoon :</p>
+            <ol>
+                <li>Utilisez les outils dans <code>raccoon-code/</code></li>
+                <li>Capturez le trafic réseau avec Wireshark</li>
+                <li>Analysez la réutilisation des paramètres DH</li>
+                <li>Exécutez les timing attacks disponibles</li>
+            </ol>
+        </div>
+
+        <div class="info-box technical-info">
+            <h3>📊 Commandes de Test</h3>
+            <code>
+            # Test de connectivité<br>
+            curl http://localhost:3000/status<br>
+            curl -k https://localhost:8443/status<br><br>
+            
+            # Test des cipher suites DHE<br>
+            openssl s_client -connect localhost:8443 -cipher DHE-RSA-AES256-SHA<br><br>
+            
+            # Analyse des paramètres DH<br>
+            openssl s_client -connect localhost:8443 | grep "Server Temp Key"
+            </code>
+        </div>
+    </div>
+</body>
+</html>

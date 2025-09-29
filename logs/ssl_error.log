@@ -1,0 +1,19 @@
+2025/09/29 14:54:10 [alert] 13#13: *1 ignoring stale global SSL error (SSL: error:1408518A:SSL routines:ssl3_ctx_ctrl:dh key too small) while SSL handshaking, client: 185.125.190.36, server: 0.0.0.0:443
+2025/09/29 14:56:46 [alert] 12#12: *1 ignoring stale global SSL error (SSL: error:1408518A:SSL routines:ssl3_ctx_ctrl:dh key too small) while SSL handshaking, client: 185.125.190.36, server: 0.0.0.0:443
+2025/09/29 14:56:55 [alert] 13#13: *10 ignoring stale global SSL error (SSL: error:1408518A:SSL routines:ssl3_ctx_ctrl:dh key too small) while SSL handshaking, client: 185.125.190.36, server: 0.0.0.0:443
+2025/09/29 14:56:55 [alert] 14#14: *11 ignoring stale global SSL error (SSL: error:1408518A:SSL routines:ssl3_ctx_ctrl:dh key too small) while SSL handshaking, client: 185.125.190.36, server: 0.0.0.0:443
+2025/09/29 14:59:10 [alert] 13#13: *1 ignoring stale global SSL error (SSL: error:1408518A:SSL routines:ssl3_ctx_ctrl:dh key too small) while SSL handshaking, client: 185.125.190.36, server: 0.0.0.0:443
+2025/09/29 15:00:29 [alert] 14#14: *1 ignoring stale global SSL error (SSL: error:1408518A:SSL routines:ssl3_ctx_ctrl:dh key too small) while SSL handshaking, client: 185.125.190.36, server: 0.0.0.0:443
+2025/09/29 15:03:27 [alert] 12#12: *1 ignoring stale global SSL error (SSL: error:1408518A:SSL routines:ssl3_ctx_ctrl:dh key too small) while SSL handshaking, client: 185.125.190.36, server: 0.0.0.0:443
+2025/09/29 15:06:37 [alert] 13#13: *2 ignoring stale global SSL error (SSL: error:1408518A:SSL routines:ssl3_ctx_ctrl:dh key too small) while SSL handshaking, client: 185.125.190.36, server: 0.0.0.0:443
+2025/09/29 15:06:45 [alert] 15#15: *7 ignoring stale global SSL error (SSL: error:1408518A:SSL routines:ssl3_ctx_ctrl:dh key too small) while SSL handshaking, client: 185.125.190.36, server: 0.0.0.0:443
+2025/09/29 15:06:45 [alert] 12#12: *9 ignoring stale global SSL error (SSL: error:1408518A:SSL routines:ssl3_ctx_ctrl:dh key too small) while SSL handshaking, client: 185.125.190.36, server: 0.0.0.0:443
+2025/09/29 15:06:45 [alert] 14#14: *10 ignoring stale global SSL error (SSL: error:1408518A:SSL routines:ssl3_ctx_ctrl:dh key too small) while SSL handshaking, client: 185.125.190.36, server: 0.0.0.0:443
+2025/09/29 15:06:45 [alert] 16#16: *12 ignoring stale global SSL error (SSL: error:1408518A:SSL routines:ssl3_ctx_ctrl:dh key too small) while SSL handshaking, client: 185.125.190.36, server: 0.0.0.0:443
+2025/09/29 15:06:45 [alert] 17#17: *14 ignoring stale global SSL error (SSL: error:1408518A:SSL routines:ssl3_ctx_ctrl:dh key too small) while SSL handshaking, client: 185.125.190.36, server: 0.0.0.0:443
+2025/09/29 15:15:09 [crit] 13#13: *68 SSL_do_handshake() failed (SSL: error:1414F178:SSL routines:tls1_set_server_sigalgs:no shared signature algorithms) while SSL handshaking, client: 172.23.0.1, server: 0.0.0.0:443
+2025/09/29 15:15:33 [crit] 13#13: *134 SSL_do_handshake() failed (SSL: error:1414F178:SSL routines:tls1_set_server_sigalgs:no shared signature algorithms) while SSL handshaking, client: 172.23.0.1, server: 0.0.0.0:443
+2025/09/29 16:54:59 [alert] 12#12: *1 ignoring stale global SSL error (SSL: error:1408518A:SSL routines:ssl3_ctx_ctrl:dh key too small) while SSL handshaking, client: 192.168.65.1, server: 0.0.0.0:443
+2025/09/29 17:01:43 [alert] 12#12: *1 ignoring stale global SSL error (SSL: error:1408518A:SSL routines:ssl3_ctx_ctrl:dh key too small) while SSL handshaking, client: 192.168.65.1, server: 0.0.0.0:443
+2025/09/29 17:03:27 [alert] 17#17: *1 ignoring stale global SSL error (SSL: error:1408518A:SSL routines:ssl3_ctx_ctrl:dh key too small) while SSL handshaking, client: 192.168.65.1, server: 0.0.0.0:443
+2025/09/29 17:09:53 [alert] 12#12: *1 ignoring stale global SSL error (SSL: error:1408518A:SSL routines:ssl3_ctx_ctrl:dh key too small) while SSL handshaking, client: 192.168.65.1, server: 0.0.0.0:443
