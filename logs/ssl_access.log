@@ -92,3 +92,7 @@
 185.125.190.39 - - [29/Sep/2025:17:31:27 +0000] "GET /status HTTP/2.0" 200 54 "-" "curl/8.7.1"
 185.125.190.39 - - [29/Sep/2025:17:31:27 +0000] "GET /status HTTP/2.0" 200 54 "-" "curl/8.7.1"
 185.125.190.39 - - [29/Sep/2025:17:31:27 +0000] "GET /status HTTP/2.0" 200 54 "-" "curl/8.7.1"
+185.125.190.39 - - [29/Sep/2025:17:43:39 +0000] "GET / HTTP/2.0" 200 5524 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15"
+185.125.190.39 - - [29/Sep/2025:17:54:45 +0000] "GET / HTTP/1.1" 200 5524 "-" "TLS tester from https://testssl.sh/"
+185.125.190.39 - - [29/Sep/2025:17:55:22 +0000] "GET / HTTP/1.1" 200 5524 "https://google.com/" "TLS tester from https://testssl.sh/"
+185.125.190.39 - - [29/Sep/2025:17:59:44 +0000] "GET / HTTP/2.0" 200 5524 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15"
