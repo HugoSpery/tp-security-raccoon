@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  dh-reuse-server:
+    build: ./dh-reuse-server
+    container_name: dh-reuse-server
+    ports:
+      - "8443:443"
+    environment:
+      - TLS_VERSION=1.2
+      - KX=DHE_RSA
+      - DH_REUSE_KEYS=1
+      - DH_FIXED_PRIV=123456789
+      - DEBUG=1
+    restart: unless-stopped
+
+  raccoon-checker:
+    image: python:3.11-slim
+    container_name: raccoon-checker
+    working_dir: /work
+    volumes:
+      - ./:/work:ro
+    environment:
+      - TLS_VERSION=${TLS_VERSION:-1.2}
+    depends_on:
+      - dh-reuse-server
+    command: ["bash", "-lc", "sleep infinity"]
