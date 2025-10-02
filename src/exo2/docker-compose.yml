@@ -7,11 +7,11 @@ services:
     ports:
       - "8443:443"
     environment:
-      - TLS_VERSION=1.2
-      - KX=DHE_RSA
-      - DH_REUSE_KEYS=1
-      - DH_FIXED_PRIV=123456789
-      - DEBUG=1
+      - TLS_VERSION=1.2          #Version TLS
+      - KX=DHE_RSA               #Key Exchange Algorithm [Choix: DHE_RSA, RSA, etc.]
+      - DH_REUSE_KEYS=1          #Enable DH key reuse
+      - DH_FIXED_PRIV=123456789  #Fixed private key for DH
+      - DEBUG=1                  #Enable debug mode
     restart: unless-stopped
 
   raccoon-checker:
