@@ -43,9 +43,9 @@ Le script `raccoon.sage` contient l'implémentation de l'attaque Raccoon permett
 #### Paramètres testés
 
 Le script teste l'attaque sur différentes tailles de clés :
-- **20 bits** : Très facile à casser (démonstration)
-- **50 bits** : Relativement rapide 
-- **100 bits** : Plus difficile mais faisable
+- **20 bits** 
+- **50 bits** 
+- **100 bits**
 
 Vous pourrez observer la **différence de temps et de complexité** entre chaque taille de clé.
 
@@ -92,7 +92,7 @@ Pour aller plus loin, vous pouvez tester l'attaque avec des clés plus grandes :
 
 ### Installation et préparation
 
-⚠️ **Attention :** Cet exercice se fait dans un **vdn**. Il faut recloner le projet.
+⚠️ **Attention :** Cet exercice se fait dans **vdn**. Il faut recloner le projet.
 
 1. **Cloner à nouveau le dépôt du TP :**
    ```bash
