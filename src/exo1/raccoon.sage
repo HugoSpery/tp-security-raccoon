@@ -27,12 +27,12 @@ def HnpSolver(label, dh, b, t, beta, fudge):
 
   # generate DH-keys
   sk_a = ZZ.random_element(1, q)
-  pk_a = power_mod( ( generator ) , sk_a , ( module premier ) )     # A modifier génération de la clé publique a
+  pk_a = power_mod( <-------generator-------> , sk_a , <-------module premier-------> )     # A modifier génération de la clé publique a
   sk_b = ZZ.random_element(1, q)
-  pk_b = power_mod( ( generator ) , sk_b , ( module premier ) )     # A modifier génération de la clé publique b
+  pk_b = power_mod( <-------generator-------> , sk_b , <-------module premier-------> )     # A modifier génération de la clé publique b
 
   # shared secret
-  dh_ab = power_mod( ( clé publique a ) , sk_b , ( module premier ) )      # A modifier génération du secret
+  dh_ab = power_mod( <-------Clé publique a-------> , sk_b , <-------module premier-------> )      # A modifier génération du secret
   assert( dh_ab == power_mod(pk_b, sk_a, p) )
 
   # generate HNP data (cheating, fast)
@@ -51,9 +51,9 @@ def HnpSolver(label, dh, b, t, beta, fudge):
   B[0, 0] = 1
   B[1, 1] = ceil( p/(2*fudge) )
   for i in range(t):
-    B[  0, i+2] = factor * ( mutiplicateur i )    # A modifier
-    B[  1, i+2] = factor * ( approximation i )    # A modifier
-    B[i+2, i+2] = factor * ( module premier )     # A modifier
+    B[  0, i+2] = factor * <-------mutiplicateur i------->    # A modifier
+    B[  1, i+2] = factor * <-------approximation i------->    # A modifier
+    B[i+2, i+2] = factor * <-------module premier------->     # A modifier
 
   # lattice invariants and heuristics
   def det_lattice(p, ell, t):

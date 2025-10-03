@@ -21,7 +21,7 @@ services:
     volumes:
       - ./:/work:ro
     environment:
-      - TLS_VERSION=${TLS_VERSION:-1.2}
+      - TLS_VERSION=${TLS_VERSION:-1.2}     #TLS version to test against (default 1.2)
     depends_on:
       - dh-reuse-server
     command: ["bash", "-lc", "sleep infinity"]

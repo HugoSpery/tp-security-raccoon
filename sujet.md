@@ -62,6 +62,11 @@ Cette simulation permet donc de comprendre les **principes théoriques** de l'at
 
 **Prérequis :** Avoir SageMath installé sur votre machine.
 
+**Avant de lancer le script, créez le dossier de sortie :**
+```bash
+mkdir output/
+```
+
 **Lancement :**
 ```bash
 sage raccoon.sage
