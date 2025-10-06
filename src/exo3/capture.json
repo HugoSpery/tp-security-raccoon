@@ -1,0 +1,15 @@
+{
+    "packet": {
+      "src_ip": "192.168.1.2",
+      "dst_ip": "192.168.1.10",
+      "src_port": 54321,
+      "dst_port": 4433,
+      "tls_version": "1.2",
+      "record": {
+        "type": "ApplicationData",
+        "cipher": "AES_128_CBC",
+        "ciphertext": "2602de08ecebdfa0ce7078644148839421e57135fad4296a56fd96202c71fabd"
+      }
+    },
+    "notes": "Clé et IV stockées séparément dans keyfile.txt"
+  }

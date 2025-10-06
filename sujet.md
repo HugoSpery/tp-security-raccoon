@@ -136,4 +136,68 @@ docker-compose run --rm raccoon-checker bash -lc "cd /work && python3 check_racc
 1. Quelles sont les différents problèmes de configuration sur ce serveur ? 
 2. Quelles est la meilleur configuration possible pour être protégé au maximum de raccoon ?
 
-## Exercice 3 : Déchiffrer trame TLS
+## Exercice 3 : Déchiffrement d'un ApplicationData TLS 1.2 après attaque RACOON
+
+
+### Objectif
+
+Tu disposes :
+ - d'une **clé** obtenue via une attaque (ex: racoon) stockée dans un fichier séparé,
+ - d'une **trace JSON** (`capture.json`) simulant un enregistrement TLS 1.2 contenant un
+   champ `ciphertext` (hex) représentant un ApplicationData chiffré.
+
+Le but de l'exercice :
+ - compléter le script `decrypt_template.sh` en indiquant **où** chercher la clé/IV
+   et **où** récupérer le ciphertext dans le JSON et comment les utiliser ; puis exécuter le script pour
+   afficher le message clair (ici : `"message prive"`).
+
+### Fichiers fournis
+
+ - `capture.json` : JSON simulant un échange TLS1.2 entre deux IP.
+   Structure minimale attendue :
+   {
+     "packet": {
+       "src_ip": "192.168.1.2",
+       "dst_ip": "192.168.1.10",
+       ...
+       "record": {
+         "type": "ApplicationData",
+         "cipher": "AES_128_CBC",
+         "ciphertext": "<hex>"
+       }
+     }
+   }
+
+ - `keyfile.txt` : contient la clé et l'IV extraites par l'attaque (format simple attendu, exemple) :
+   key:<hex>
+   iv:<hex>
+
+ - `decrypt_template.sh` : script à trous (2 emplacements "# à compléter") que tu dois éditer pour extraire :
+   1) JSON_FILE="<TODO>" # à compléter
+   2) KEYFILE="<TODO>" # à compléter
+   3) KEY_HEX=$(grep '^key:' "<TODO>" | cut -d: -f2) # à compléter
+   4) IV_HEX=$(grep '^iv:' "<TODO>" | cut -d: -f2) # à compléter
+   5) CIPHER_HEX=$(grep -oP '"ciphertext"\s*:\s*"\K[0-9a-fA-F]+' "<TODO>") # à compléter
+   6) printf "%s" "<TODO>" | awk '{for(i=1;i<=length;i+=2) printf "%c", strtonum("0x" substr($0,i,2))}' > "$CIPHERTEXT_BIN"  # à compléter
+   7) openssl enc -d -aes-128-cbc -K "<TODO>" -iv "<TODO>" -in "$CIPHERTEXT_BIN" -out "$DECRYPTED" # à compléter
+
+
+### Exécution
+
+1. Rendre le script exécutable :
+   chmod +x decrypt_template.sh
+
+2. Éditer `decrypt_template.sh`
+
+3. Lancer :
+   ./decrypt_template.sh
+
+### Résultat attendu
+
+Le script doit afficher :
+   Message déchiffré : <à trouver>
+
+### Remarques
+
+ - Cet exercice est une **simulation pédagogique** de l'étape de récupération/usage d'une clé compromise.
+ - Le chiffrement utilisé ici est AES-128-CBC
