@@ -138,6 +138,7 @@ docker-compose run --rm raccoon-checker bash -lc "cd /work && python3 check_racc
 
 ## Exercice 3 : Déchiffrement d'un ApplicationData TLS 1.2 après attaque RACOON
 
+⚠️ **Attention :** Cet exercice se fait **en dehors de vdn**.
 
 ### Objectif
 
