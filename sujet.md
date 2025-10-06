@@ -200,4 +200,3 @@ Le script doit afficher :
 ### Remarques
 
  - Cet exercice est une **simulation pédagogique** de l'étape de récupération/usage d'une clé compromise.
- - Le chiffrement utilisé ici est AES-128-CBC
