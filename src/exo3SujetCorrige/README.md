@@ -1,4 +1,4 @@
-# Exercice 3 (version 2) : Déchiffrement d'un ApplicationData TLS 1.2 (script à trous)
+# Exercice 3 (version 2 - **BONUS**) : Déchiffrement d'un ApplicationData TLS 1.2 (script à trous)
 
 ⚠️ **Attention :** Cet exercice se fait **en dehors de vdn**.
 
